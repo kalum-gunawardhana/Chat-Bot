@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#chatBox {
+    width: 80%;
+    max-width: 600px;
+    height: 60%;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chatBox p {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#chatBox p:nth-child(odd) {
+    background-color: #e9ecef;
+    align-self: flex-start;
+}
+
+#chatBox p:nth-child(even) {
+    background-color: #007bff;
+    color: #fff;
+    align-self: flex-end;
+}
+
+#txtUserInput {
+    width: calc(100% - 120px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
