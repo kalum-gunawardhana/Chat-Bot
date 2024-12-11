@@ -1,5 +1,8 @@
 const chatList = [];
 
+var md = window.markdownit();
+
+
 let user = "";
 
 document.getElementById("selectUser").addEventListener("change", function () {
@@ -17,7 +20,7 @@ function sendMassage() {
     chatList.push(chatBubble);
     loadChatBox();
   }
-  // --------------------------------------------------------------
+
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -38,18 +41,17 @@ function sendMassage() {
     body: raw,
   };
 
-  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=", requestOptions)
+  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCR9hGt9qAWSTRgwwqhYHz-G8xA_qTOMI8", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       
       console.log(result.candidates[0].content.parts[0].text);
       chatBubble=`<p>${result.candidates[0].content.parts[0].text}<p>`;
-      chatList.push(chatBubble);
+      chatList.push(md.render(chatBubble));
       loadChatBox();
     })
     .catch((error) => console.error(error));
 
-  // --------------------------------------------------------------
   loadChatBox();
 }
 
@@ -60,6 +62,3 @@ function loadChatBox() {
   })
 
 }
-
-// ----------------------------------------------------------------------
-
