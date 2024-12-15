@@ -41,7 +41,7 @@ function sendMassage() {
     body: raw,
   };
 
-  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCR9hGt9qAWSTRgwwqhYHz-G8xA_qTOMI8", requestOptions)
+  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       
